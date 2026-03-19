@@ -42,9 +42,6 @@ yarn-error.log*
 # brain / artifacts
 .gemini
 brain
-*.png
-*.jpg
-*.jpeg
 data/leads.json
 
 # vercel
