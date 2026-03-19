@@ -13,6 +13,16 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
+type Tier = {
+  name: string;
+  price: string;
+  description: string;
+  features: string[];
+  icon: typeof Zap | typeof Rocket | typeof ShieldCheck;
+  popular: boolean;
+  cta: string;
+};
+
 const tiers = [
   {
     name: "Starter",
@@ -59,7 +69,7 @@ const tiers = [
     popular: false,
     cta: "Unlock Expansion",
   },
-];
+] as const satisfies Tier[];
 
 export function Pricing() {
   return (

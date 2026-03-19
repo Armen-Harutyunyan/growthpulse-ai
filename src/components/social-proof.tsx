@@ -2,22 +2,39 @@
 
 import { motion } from "framer-motion";
 import { Star, TrendingUp, Users, Award, Quote } from "lucide-react";
-import Image from "next/image";
 
 export function SocialProof() {
   return (
     <section className="py-20 px-4 bg-muted/30 border-y border-white/5 relative overflow-hidden">
       <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="flex flex-col items-center mb-12">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-muted-foreground mb-8">Trusted by Growth Teams at</p>
-          <div className="flex flex-wrap justify-center items-center gap-16 transition-all duration-700 max-w-5xl">
-            <div className="h-24 relative w-full">
-              <Image 
-                src="/images/fictional_logos.png" 
-                alt="Fictional customer logos" 
-                fill 
-                className="object-contain"
-              />
+        <div className="flex flex-col items-center mb-16">
+          <p className="text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground/60 mb-12">Trusted by fast-growing SaaS teams</p>
+          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 md:gap-x-20 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+            <div className="flex items-center gap-2 group cursor-default">
+              <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                <div className="w-4 h-4 rounded-sm bg-blue-400" />
+              </div>
+              <span className="text-xl font-black tracking-tighter">NEXUS</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <TrendingUp className="w-6 h-6 text-emerald-500" />
+              <span className="text-xl font-black tracking-tighter italic">VANTAGE</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 border-2 border-purple-500 rounded-full flex items-center justify-center p-1">
+                <div className="w-full h-full bg-purple-500 rounded-full" />
+              </div>
+              <span className="text-xl font-bold tracking-tight">ORBIT.AI</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Users className="w-6 h-6 text-pink-500" />
+              <span className="text-xl font-black tracking-tighter">SYNTH</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-4 bg-orange-500/30 rounded-full flex items-center px-1">
+                <div className="w-2 h-2 bg-orange-500 rounded-full" />
+              </div>
+              <span className="text-xl font-bold tracking-tight">PULSE</span>
             </div>
           </div>
         </div>

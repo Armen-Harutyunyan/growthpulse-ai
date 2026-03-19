@@ -26,7 +26,7 @@ export function useABTest(initialVariant?: Variant): Variant {
     let selected: Variant;
     
     if (saved === "A" || saved === "B") {
-      selected = saved as Variant;
+      selected = saved;
     } else {
       selected = Math.random() > 0.5 ? "B" : "A";
       localStorage.setItem(AB_TEST_KEY, selected);

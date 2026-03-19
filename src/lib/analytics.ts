@@ -36,7 +36,7 @@ export function captureEvent(eventName: string, properties: Record<string, unkno
 
   // Debugging log for development
   if (process.env.NODE_ENV === "development") {
-    console.info(`[📊 Analytics] ${eventName}:`, properties);
+    console.info(`[Analytics] ${eventName}:`, properties);
   }
 }
 

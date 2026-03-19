@@ -21,6 +21,18 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
+import { LucideIcon } from "lucide-react";
+
+type FeatureItem = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  color: string;
+  bgColor: string;
+  borderColor: string;
+  tag: string;
+};
+
 const features = [
   {
     title: "One-Click Stack Integration",
@@ -67,7 +79,7 @@ const features = [
     borderColor: "border-pink-500/20",
     tag: "Monitoring"
   }
-];
+] as const satisfies FeatureItem[];
 
 import { SectionBadge } from "@/components/ui/brand";
 
