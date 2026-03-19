@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "GrowthPulse AI | Your marketing stack, diagnosed in minutes.",
   description: "GrowthPulse AI connects to your CRM, email, ad accounts, and analytics to generate an automated diagnostic report scoring performance across 7 growth dimensions.",
   alternates: {
-    canonical: "/",
+    canonical: "https://growthpulse-ai.vercel.app/",
   },
   openGraph: {
     title: "GrowthPulse AI | Your marketing stack, diagnosed in minutes.",
@@ -112,7 +112,7 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h4 className="font-black uppercase tracking-widest text-xs mb-6 opacity-40">Product</h4>
+              <h3 className="font-black uppercase tracking-widest text-xs mb-6 opacity-40">Product</h3>
               <ul className="space-y-4 font-bold opacity-80">
                 <li><a href="#features" className="hover:text-primary transition-colors">Features</a></li>
                 <li><a href="#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
@@ -120,7 +120,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-black uppercase tracking-widest text-xs mb-6 opacity-40">Security</h4>
+              <h3 className="font-black uppercase tracking-widest text-xs mb-6 opacity-40">Security</h3>
               <ul className="space-y-4 font-bold opacity-80 text-sm">
                 <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>

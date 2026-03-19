@@ -24,7 +24,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen sm:min-h-[90vh] flex flex-col items-center justify-center py-12 md:py-24 px-4 overflow-hidden">
+    <section className="relative min-h-[100dvh] sm:min-h-[90vh] flex flex-col items-center justify-center pt-[100px] pb-12 md:pb-24 px-4 overflow-hidden">
       {/* Background Decor */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-[120px]" />
