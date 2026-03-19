@@ -15,13 +15,14 @@ import type { Metadata } from "next";
 type Variant = "A" | "B";
 
 export const metadata: Metadata = {
-// ... rest of metadata (kept the same)
+  metadataBase: new URL("https://growthpulse-ai.vercel.app/"),
   title: "GrowthPulse AI | Your marketing stack, diagnosed in minutes.",
   description: "GrowthPulse AI connects to your CRM, email, ad accounts, and analytics to generate an automated diagnostic report scoring performance across 7 growth dimensions.",
   alternates: {
-    canonical: "https://growthpulse-ai.vercel.app/",
+    canonical: "/",
   },
   openGraph: {
+// ... rest remains the same
     title: "GrowthPulse AI | Your marketing stack, diagnosed in minutes.",
     description: "Automated marketing diagnostic for B2B SaaS companies. Get your 7-Dimension Growth Score and a 90-day roadmap.",
     images: ["/api/og"],
