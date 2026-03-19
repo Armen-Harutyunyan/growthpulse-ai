@@ -46,7 +46,7 @@ const jsonLd = {
 
 function HeroSkeleton() {
   return (
-    <div className="min-h-[90vh] flex flex-col items-center justify-center pt-20 px-4">
+    <div className="min-h-screen sm:min-h-[90vh] flex flex-col items-center justify-center py-24 px-4">
       <div className="container mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <Skeleton className="h-8 w-48 rounded-full" />
@@ -102,7 +102,7 @@ export default function Home() {
       </SectionErrorBoundary>
 
       {/* Footer */}
-      <footer className="py-20 border-t border-white/5 bg-muted/20 mt-20">
+      <footer className="py-20 border-t border-white/5 bg-muted/20">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-2">
