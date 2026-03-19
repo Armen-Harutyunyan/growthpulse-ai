@@ -80,7 +80,7 @@ export function Pricing() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {tiers.map((tier, i) => (
             <motion.div
-              key={i}
+              key={tier.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}

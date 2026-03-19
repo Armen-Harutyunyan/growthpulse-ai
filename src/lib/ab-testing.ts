@@ -13,20 +13,23 @@ interface AnalyticsWindow extends Window {
   };
 }
 
-export function useABTest(testId: string = "hero"): Variant {
-  const [variant, setVariant] = useState<Variant>("A");
+export function useABTest(initialVariant?: Variant): Variant {
+  const [variant, setVariant] = useState<Variant>(initialVariant || "A");
 
   useEffect(() => {
+    // If a server variant is provided, we don't need random assignment
+    if (initialVariant) return;
+
     if (typeof window === "undefined") return;
     
-    const saved = localStorage.getItem(`${AB_TEST_KEY}_${testId}`);
+    const saved = localStorage.getItem(AB_TEST_KEY);
     let selected: Variant;
     
     if (saved === "A" || saved === "B") {
       selected = saved as Variant;
     } else {
       selected = Math.random() > 0.5 ? "B" : "A";
-      localStorage.setItem(`${AB_TEST_KEY}_${testId}`, selected);
+      localStorage.setItem(AB_TEST_KEY, selected);
     }
     
     // Defer state update to next tick to avoid cascading render warning
@@ -41,7 +44,7 @@ export function useABTest(testId: string = "hero"): Variant {
     }
 
     return () => clearTimeout(timeout);
-  }, [testId]);
+  }, [initialVariant]);
 
   return variant;
 }

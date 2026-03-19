@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { cookies } from "next/headers";
 import { Hero } from "@/components/hero";
 import { Features } from "@/components/features";
 import { SocialProof } from "@/components/social-proof";
@@ -10,7 +11,11 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Logo } from "@/components/ui/brand";
 import type { Metadata } from "next";
 
+// Define the variant type
+type Variant = "A" | "B";
+
 export const metadata: Metadata = {
+// ... rest of metadata (kept the same)
   title: "GrowthPulse AI | Your marketing stack, diagnosed in minutes.",
   description: "GrowthPulse AI connects to your CRM, email, ad accounts, and analytics to generate an automated diagnostic report scoring performance across 7 growth dimensions.",
   alternates: {
@@ -63,7 +68,10 @@ function HeroSkeleton() {
   );
 }
 
-export default function Home() {
+export default async function Home() {
+  const cookieStore = await cookies();
+  const variant = (cookieStore.get('gp_hero_variant')?.value as Variant) || 'A';
+
   return (
     <main className="min-h-screen bg-background selection:bg-primary/30 selection:text-white">
       {/* Navigation */}
@@ -81,7 +89,7 @@ export default function Home() {
       {/* Page Sections wrapped in Boundaries to ensure resilience */}
       <SectionErrorBoundary sectionName="Hero">
         <Suspense fallback={<HeroSkeleton />}>
-          <Hero />
+          <Hero variant={variant} />
         </Suspense>
       </SectionErrorBoundary>
 

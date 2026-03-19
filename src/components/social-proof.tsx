@@ -10,8 +10,8 @@ export function SocialProof() {
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="flex flex-col items-center mb-12">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-muted-foreground mb-8">Trusted by Growth Teams at</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-700 max-w-4xl">
-            <div className="h-16 relative w-[400px]">
+          <div className="flex flex-wrap justify-center items-center gap-16 transition-all duration-700 max-w-5xl">
+            <div className="h-24 relative w-full">
               <Image 
                 src="/images/fictional_logos.png" 
                 alt="Fictional customer logos" 

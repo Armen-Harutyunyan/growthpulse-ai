@@ -1,6 +1,6 @@
 "use client";
 
-import { useABTest, HeroVariants } from "@/lib/ab-testing";
+import { useABTest, HeroVariants, Variant } from "@/lib/ab-testing";
 import { AnalyticsEvents, captureEvent } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -9,8 +9,8 @@ import { Zap, ArrowRight, BarChart3, Cpu } from "lucide-react";
 
 import { SectionBadge } from "@/components/ui/brand";
 
-export function Hero() {
-  const variant = useABTest();
+export function Hero({ variant: serverVariant }: { variant: Variant }) {
+  const variant = useABTest(serverVariant);
   const content = HeroVariants[variant];
 
   const handleCtaClick = () => {
@@ -98,9 +98,9 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative lg:ml-auto"
+          className="relative lg:ml-auto w-full flex justify-end"
         >
-          <div className="relative z-10 w-full aspect-square max-w-[500px] overflow-hidden rounded-3xl border border-white/10 shadow-2xl glass">
+          <div className="relative z-10 w-full aspect-[4/3] max-w-[650px] overflow-hidden rounded-3xl border border-white/10 shadow-2xl glass">
             <Image 
               src="/images/hero_dataviz.png" 
               alt="GrowthPulse AI Data Visualization" 
@@ -139,8 +139,9 @@ export function Hero() {
           </div>
           
           {/* Decorative background shape */}
-          <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl z-0" />
-          <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl z-0" />
+          <div className="absolute -top-20 -right-20 w-80 h-80 bg-primary/20 rounded-full blur-[120px] z-0" />
+          <div className="absolute top-20 -left-20 w-60 h-60 bg-secondary/10 rounded-full blur-[100px] z-0" />
+          <div className="absolute -bottom-20 right-20 w-80 h-80 bg-accent/15 rounded-full blur-[120px] z-0" />
         </motion.div>
       </div>
     </section>
