@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GrowthPulse AI — Marketing Diagnostic System
 
-## Getting Started
+Built for the Azarian Growth Agency Candidate Assessment.
 
-First, run the development server:
+**Live URL**: [Pending Deployment]  
+**Repository**: [Pending Access]
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+GrowthPulse AI is a high-performance marketing diagnostic platform built with a "Vibe Coding" approach—leveraging modern AI assistants to rapidly translate strategic growth principles into technical reality. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The system connects to a company’s marketing stack, analyzes data across 7 growth dimensions, and generates a prioritized AI-driven roadmap.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 Tech Stack
 
-## Learn More
+- **Framework**: [Next.js 15/16](https://nextjs.org/) (App Router, React 19)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **UI Components**: [Shadcn UI](https://ui.shadcn.com/) & [Framer Motion](https://www.framer.com/motion/)
+- **Analytics**: [PostHog](https://posthog.com/) & Local Event Tracking
+- **Persistence**: Local JSON Storage (Mock) / Scalable to Supabase
+- **Icons**: [Lucide React](https://lucide.dev/)
 
-To learn more about Next.js, take a look at the following resources:
+## ✨ Key Features Implemented
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 1. High-Converting Landing Page
+- **Midnight Data Theme**: A premium, data-driven aesthetic using deep charcoal (#09090B) and vibrant indigo/emerald accents.
+- **Micro-animations**: Subtle entrance animations and interactive data visualization overlays using Framer Motion.
+- **Mobile Responsive**: Fully optimized for all device sizes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2. Marketing Systems Architecture
+- **A/B Testing Capability**: Built-in client-side variant assignment (Variant A vs. Variant B) for the Hero headline, with persistence via `localStorage`.
+- **UTM Tracking**: Automatic capturing and persistence of UTM parameters (`source`, `medium`, `campaign`, etc.) for lead attribution.
+- **Custom Event Tracking**: Tracking for CTA clicks, form starts, and submission success/errors.
 
-## Deploy on Vercel
+### 3. Lead Capture & Data Storage
+- **Validated Form**: Client-side validation using Zod and React Hook Form.
+- **Serverless API**: Lead data is processed and stored in `data/leads.json` (simulating a production database).
+- **Post-Submission Flow**: Animated success states and instant feedback via Sonner toasts.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧪 A/B Testing Strategy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Variant | Headline | Primary CTA |
+|---------|----------|-------------|
+| **A (Control)** | Your marketing stack, diagnosed in minutes. | Start My Free Diagnosis |
+| **B (Provocative)** | Stop guessing. Start growing. | Diagnose My Growth Score |
+
+## 📦 Setup & Development
+
+1. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Run Locally**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Check Captured Leads**:
+   Leads are saved locally to `./data/leads.json`.
+
+## 🧠 Architectural Decisions & Trade-offs
+
+- **Tailwind 4 & Next.js 16**: Opted for the absolute cutting edge to demonstrate forward-compatibility and speed, despite minor linting irregularities with new CSS-in-JS rules.
+- **Local Persistence**: Used a local JSON file to ensure the prototype is "zero-config" for reviewers, while the API is architected to switch to Supabase or Airtable with one line of code.
+- **Abstract Visuals**: Eschewed stock photography in favor of high-tech abstract data visualizations to align with the "data-driven" brand positioning.
+
+---
+Built with ⚡️ by Google Senior Frontend Specialist / Antigravity AI.

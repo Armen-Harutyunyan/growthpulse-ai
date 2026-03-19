@@ -1,0 +1,57 @@
+# 🛡️ GrowthPulse AI: Master Engineering & Growth Architecture Rules
+
+This project is governed by strict, senior-level architectural constraints. Any AI assistant acting on this codebase MUST treat these rules as immutable laws. Failure to comply with these patterns will result in an immediate architectural rejection.
+
+---
+
+## 🏛️ 1. ARCHITECTURAL INTEGRITY (CORE)
+- **Modular Monolith**: Keep features encapsulated. `src/components/pricing.tsx` should only import from `src/components/ui` or `src/lib`. Never cross-pollinate logic between sibling sections.
+- **DDA (Data-Driven Aesthetics)**: Visuals must be tied to product data concepts. Use Tailwind's `@theme` variables for semantic consistency (e.g., `text-primary`, `bg-muted`).
+- **Composition over Inheritance**: React components must use the "Slot" pattern where possible to ensure high flexibility without prop drilling.
+- **Route Handlers strictly for Side-Effects**: All API logic in `src/app/api` must be idempotent where possible and strictly validated with Zod before processing.
+
+## 🔒 2. SECURITY & RESILIENCE
+- **Input Sanitization**: ZERO trust on user input. Every string from the lead form must be sanitized and validated via `z.string().min().max().email()`.
+- **In-Memory Logic**: Never store sensitive session data in plain `localStorage`. Use hashed keys or HttpOnly cookies for anything beyond UI state (like A/B variants).
+- **Error Boundaries**: Every high-level component section (Hero, Pricing, etc.) must fail gracefully. If one section fails, the rest of the landing page MUST remain functional.
+- **CSRF & XSS Mitigation**: Use Next.js built-in protections. Never use `dangerouslySetInnerHTML` without a senior-level audit and explicit justification.
+
+## ⚡ 3. PERFORMANCE & CORE WEB VITALS (CWV)
+- **LCP Optimization**: The Hero Image (`/images/hero_dataviz.png`) MUST have the `priority` attribute and be served in Next.js optimized `.webp` or `.avif` formats.
+- **Zero Shift (CLS)**: Every container must have explicit aspect ratios or skeleton loaders. Layout shifts > 0.1 are considered a critical bug.
+- **TBT (Total Blocking Time)**: Minimize client-side calculation. Complex data sorting/filtering for the growth diagnostic MUST happen on the server or be throttled via `useTransition`.
+- **Bundle Hygiene**: No thick external libraries. Prefer native Web API (e.g., `fetch` over `axios`) and lightweight animation tools (Framer Motion).
+
+## 📊 4. GROWTH & ANALYTICS ARCHITECTURE
+- **Discriminated Union Variants**: All A/B test variants MUST be typed as fixed string literals. `type Variant = 'A' | 'B'`. Avoid `enum`.
+- **Event-Driven Attribution**: Every conversion event MUST attach:
+    - `timestamp` (ISO)
+    - `session_id` (UUID)
+    - `variant_assignment`
+    - `utm_context` (Snapshot from URL on arrival)
+- **Idempotent Lead Capture**: The API must handle duplicate submissions gracefully using `website_url` as a partial unique key.
+
+## ♿ 5. ACCESSIBILITY (A11Y) & WCAG 2.1
+- **Focus Sovereignty**: Every interactive element MUST have a visible, high-contrast focus ring (`focus-visible:ring-2`).
+- **Semantic Hierarchy**: Strictly one `h1` per page. Heading levels (`h2`, `h3`) must follow a logical sequence irrespective of visual size.
+- **ARIA-Driven State**: Use `aria-expanded`, `aria-busy`, and `aria-live` for all dynamic form transitions and success messages.
+
+## 💎 6. PRODUCTION HYGIENE
+- **Strict Linting**: ESLint `error` level for `no-explicit-any`, `no-console` (in build), and `react-hooks/rules-of-hooks`.
+- **Naming Conventions**: 
+    - `src/components`: PascalCase (`LeadForm.tsx`)
+    - `src/lib`: kebab-case (`ab-testing.ts`)
+    - Types/Interfaces: PascalCase (`IMarketingLead`)
+- **Git Flow**: Use conventional commits: `feat(api):`, `fix(ui):`, `perf(hero):`.
+- **TypeScript Magic**: Prefer `unknown` over `any`. Use `Extract` and `Exclude` for complex type transformations of variant-based props.
+
+---
+
+## 🚫 7. THE "NEVER" LIST
+1. **NEVER** use `any`. Ever. Define the type or use `unknown`.
+2. **NEVER** use hardcoded color hexes. Use Tailwind utility classes or variables from `globals.css`.
+3. **NEVER** use stock "human" photos (Brand Guideline: Abstract Data Only).
+4. **NEVER** perform direct DOM manipulation. React state only.
+5. **NEVER** bypass Zod validation on API boundaries.
+
+*Failure to adhere to these rules is an admission of technical debt.*
