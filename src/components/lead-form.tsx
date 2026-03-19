@@ -85,7 +85,7 @@ export function LeadForm() {
   }
 
   return (
-    <section className="py-24 px-4 bg-muted/20 relative overflow-hidden" id="lead-form">
+    <section className="py-12 md:py-24 px-4 bg-muted/20 relative overflow-hidden" id="lead-form">
        {/* Background Decor */}
        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[150px] -z-10" />

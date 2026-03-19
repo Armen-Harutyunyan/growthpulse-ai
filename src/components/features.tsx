@@ -73,7 +73,7 @@ import { SectionBadge } from "@/components/ui/brand";
 
 export function Features() {
   return (
-    <section className="py-24 px-4 bg-background relative overflow-hidden" id="features">
+    <section className="py-12 md:py-24 px-4 bg-background relative overflow-hidden" id="features">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <SectionBadge className="uppercase tracking-wider font-bold">

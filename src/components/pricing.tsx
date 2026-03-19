@@ -63,7 +63,7 @@ const tiers = [
 
 export function Pricing() {
   return (
-    <section className="py-24 px-4 bg-background relative overflow-hidden" id="pricing">
+    <section className="py-12 md:py-24 px-4 bg-background relative overflow-hidden" id="pricing">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <Badge variant="outline" className="mb-4 py-1 px-4 text-primary bg-primary/5 uppercase tracking-wider font-bold border-primary/20">
